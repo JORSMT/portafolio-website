@@ -1,0 +1,45 @@
+@use "mixins" as *;
+
+.section {
+  @include section-pad;
+}
+
+.inner {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(20px, 2.6vw, 32px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  margin-top: clamp(36px, 4vw, 54px);
+}
+
+.step {
+  border-top: 2px solid var(--color-accent-700);
+  padding-top: 20px;
+}
+
+.stepNumber {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(40px, 4.5vw, 56px);
+  line-height: 1;
+  color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 14px 0 0;
+}
+
+.stepText {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}

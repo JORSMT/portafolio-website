@@ -1,0 +1,39 @@
+.heading {
+  max-width: 760px;
+}
+
+.kicker {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  margin: 0 0 16px;
+}
+
+.dark .kicker {
+  color: var(--color-accent-300);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.04;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.md .title {
+  font-size: clamp(28px, 3.6vw, 42px);
+}
+
+.description {
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.65;
+  margin: 22px 0 0;
+  color: color-mix(in srgb, var(--color-text) 82%, transparent);
+}

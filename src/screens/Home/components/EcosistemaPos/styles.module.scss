@@ -1,0 +1,90 @@
+@use "mixins" as *;
+
+.section {
+  @include section-pad;
+  position: relative;
+  background:
+    radial-gradient(
+      900px 460px at 15% 0%,
+      color-mix(in srgb, var(--color-accent-500) 22%, transparent),
+      transparent 60%
+    ),
+    var(--color-accent-900);
+  @include dark-section(20%);
+}
+
+.inner {
+  @include container;
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: clamp(40px, 5vw, 60px);
+}
+
+.flowNode {
+  flex: 1 1 200px;
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.flowNodeHighlighted {
+  background: color-mix(in srgb, var(--color-accent-500) 22%, transparent);
+}
+
+.flowNodeTitle {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.flowNodeSubtitle {
+  font-size: 12.5px;
+  margin-top: 6px;
+  color: color-mix(in srgb, #e8eef5 62%, transparent);
+}
+
+.flowNodeHighlighted .flowNodeSubtitle {
+  color: color-mix(in srgb, #e8eef5 72%, transparent);
+}
+
+.flowArrow {
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-300);
+}
+
+.caps {
+  display: grid;
+  gap: 12px 28px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  margin-top: clamp(36px, 4vw, 52px);
+}
+
+.capItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: 14.5px;
+  line-height: 1.45;
+
+  svg {
+    flex: none;
+    margin-top: 2px;
+    color: var(--color-accent-300);
+  }
+}
+
+.disclaimer {
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 26px 0 0;
+  max-width: 72ch;
+  color: color-mix(in srgb, #e8eef5 55%, transparent);
+}

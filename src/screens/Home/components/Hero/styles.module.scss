@@ -1,0 +1,212 @@
+@use "mixins" as *;
+
+.hero {
+  scroll-margin-top: 72px;
+  position: relative;
+  background:
+    radial-gradient(
+      1100px 520px at 82% -8%,
+      color-mix(in srgb, var(--color-accent-500) 26%, transparent),
+      transparent 62%
+    ),
+    var(--color-accent-900);
+  @include dark-section(20%);
+  overflow: hidden;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(color-mix(in srgb, #e8eef5 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, #e8eef5 5%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(120% 90% at 50% 0%, #000 30%, transparent 75%);
+}
+
+.inner {
+  position: relative;
+  @include container;
+  padding-top: clamp(120px, 15vh, 168px);
+  padding-bottom: clamp(72px, 9vw, 110px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+  gap: clamp(40px, 5vw, 72px);
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent-300);
+  padding: 7px 14px;
+  border: 1px solid var(--color-divider);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(40px, 5.6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+  margin: 26px 0 0;
+}
+
+.lead {
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 24px 0 0;
+  color: color-mix(in srgb, #e8eef5 82%, transparent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+
+  a {
+    min-height: 44px;
+    padding-inline: 22px;
+  }
+}
+
+/* — decorative dashboard — */
+.dashboard {
+  background: color-mix(in srgb, var(--color-accent-900) 55%, #0d1720);
+  padding: clamp(16px, 2vw, 22px);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7);
+}
+
+.dashboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.dashboardTitle {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: inherit;
+
+  svg {
+    color: var(--color-accent-300);
+  }
+}
+
+.dashboardNote {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-300);
+}
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+
+  & + & {
+    margin-top: 12px;
+  }
+}
+
+.panel {
+  border: 1px solid var(--color-divider);
+  padding: 13px;
+}
+
+.panelLabel {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, #e8eef5 60%, transparent);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 42px;
+  margin-top: 11px;
+
+  span {
+    flex: 1;
+  }
+}
+
+.list {
+  margin-top: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dotOk {
+  width: 8px;
+  height: 8px;
+  background: #5fb08a;
+}
+
+.dotWarn {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-300);
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-400);
+}
+
+.progressList {
+  margin-top: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.progressTrack {
+  height: 6px;
+  background: var(--color-divider);
+}
+
+.progressFill {
+  height: 100%;
+}
+
+.issueRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statusWarn {
+  color: var(--color-accent-300);
+}
+
+.statusOk {
+  color: #5fb08a;
+}

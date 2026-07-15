@@ -1,0 +1,52 @@
+@use "mixins" as *;
+
+.section {
+  padding: clamp(72px, 10vw, 120px) 0;
+  position: relative;
+  background:
+    radial-gradient(
+      800px 400px at 50% 120%,
+      color-mix(in srgb, var(--color-accent-500) 24%, transparent),
+      transparent 60%
+    ),
+    var(--color-accent-900);
+  @include dark-section(20%);
+}
+
+.inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 72px);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(30px, 4.4vw, 52px);
+  line-height: 1.04;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.lead {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.65;
+  margin: 20px auto 0;
+  max-width: 60ch;
+  color: color-mix(in srgb, #e8eef5 82%, transparent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 32px;
+
+  a {
+    min-height: 44px;
+    padding-inline: 24px;
+  }
+}

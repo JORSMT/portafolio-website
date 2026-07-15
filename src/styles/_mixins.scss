@@ -1,0 +1,18 @@
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 72px);
+}
+
+@mixin section-pad($min: 72px, $pref: 10vw, $max: 128px) {
+  padding: clamp($min, $pref, $max) 0;
+}
+
+// Dark sections override the text/divider tokens locally so every
+// design-system class (.blueprint, .corner, .input, dividers) restyles
+// itself inside without extra rules.
+@mixin dark-section($divider-alpha: 20%) {
+  color: #e8eef5;
+  --color-text: #e8eef5;
+  --color-divider: color-mix(in srgb, #e8eef5 #{$divider-alpha}, transparent);
+}

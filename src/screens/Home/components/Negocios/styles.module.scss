@@ -1,0 +1,77 @@
+@use "mixins" as *;
+
+.section {
+  scroll-margin-top: 72px;
+  @include section-pad;
+  background: var(--color-surface);
+}
+
+.inner {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(20px, 2.6vw, 34px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  margin-top: clamp(36px, 4vw, 54px);
+}
+
+.card {
+  padding: clamp(22px, 2.4vw, 30px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cover {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-divider);
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+.coverName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(20px, 2.2vw, 26px);
+  letter-spacing: 0.02em;
+  color: var(--color-accent-800);
+  text-transform: uppercase;
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  margin: 18px 0 0;
+}
+
+.desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 16px 0 0;
+}
+
+.link {
+  align-self: flex-start;
+  margin-top: 20px;
+  gap: 7px;
+}
+
+.disclaimer {
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 26px 0 0;
+  max-width: 70ch;
+  color: color-mix(in srgb, var(--color-text) 58%, transparent);
+}

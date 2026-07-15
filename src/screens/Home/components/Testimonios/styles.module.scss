@@ -1,0 +1,67 @@
+@use "mixins" as *;
+
+.section {
+  @include section-pad(60px, 8vw, 104px);
+  background: var(--color-surface);
+}
+
+.inner {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(18px, 2.2vw, 28px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
+.card {
+  padding: clamp(24px, 2.6vw, 32px);
+}
+
+.quoteMark {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  line-height: 0.6;
+  color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.pending {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 14px 0 0;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  font-style: italic;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-divider);
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span:first-child {
+    width: 88px;
+    height: 9px;
+    background: var(--color-divider);
+  }
+
+  span:last-child {
+    width: 60px;
+    height: 8px;
+    background: var(--color-divider);
+  }
+}

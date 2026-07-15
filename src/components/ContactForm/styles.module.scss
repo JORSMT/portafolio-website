@@ -1,0 +1,65 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+}
+
+.inputError {
+  border-color: #c0473c;
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: #c0473c;
+  margin-top: 5px;
+  display: block;
+}
+
+.select {
+  font-family: inherit;
+  appearance: auto;
+}
+
+.submit {
+  min-height: 46px;
+}
+
+.success {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.successIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-700);
+  margin: 0 auto;
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 18px 0 0;
+}
+
+.successText {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+  color: color-mix(in srgb, var(--color-text) 75%, transparent);
+}
+
+.successReset {
+  margin-top: 20px;
+}
