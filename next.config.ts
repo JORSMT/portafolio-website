@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  sassOptions: {
-    loadPaths: ["./src/styles"],
-  },
+  /* config options here */
 };
 
 export default nextConfig;
